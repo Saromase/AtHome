@@ -17,8 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::get('/errors/customer', function () {
+    return view('no_customer');
+})->name('errors.no_customer');
+
+
+
+
+Route::prefix('{customer}')->middleware('customer')->group(function () {
+    require __DIR__.'/auth.php';
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth'])->name('dashboard');
+
+});
