@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -17,6 +18,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
+        $locale = App::currentLocale();
+        dump($locale);
         return view('auth.login');
     }
 
