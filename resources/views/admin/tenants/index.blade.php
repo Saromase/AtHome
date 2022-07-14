@@ -1,21 +1,18 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Clients') }}
-        </h2>
-    </x-slot>
-
-    {{-- Toolbar --}}
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-slate-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b dark:bg-slate-800 border-gray-200">
-                    <button class="p-2 bg-green-500 hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring focus:ring-green-300">
-                        Ajouter
-                    </button>
-
-                </div>
-            </div>
-        </div>
+<x-admin-layout>
+    <div class="h-16 rounded w-fit py-3 px-3">
+        <ul>
+            <li>
+                <button type="button"
+                    class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-500 bg-gray-50 dark:bg-gray-600">
+                    <a href="{{ route('tenants.create') }}">
+                        {{ ucfirst(__('core.button.add'))}}
+                    </a>
+                </button>
+            </li>
+        </ul>
     </div>
-</x-app-layout>
+
+    <div>
+        Container
+    </div>
+</x-admin-layout>
