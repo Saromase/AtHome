@@ -22,7 +22,7 @@
                             d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
                         </path>
                     </svg>
-                    <span class="flex-1 ml-3 whitespace-nowrap">{{ ucfirst(__('admin.tenants.tenant_management')) }}</span>
+                    <span class="flex-1 ml-3 whitespace-nowrap">{{ Str::ucfirst(__('admin.tenants.tenant_management')) }}</span>
                     {{-- <span
                         class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> --}}
                 </x-aside-link>
@@ -127,7 +127,7 @@
                                 d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="flex-1 ml-3 whitespace-nowrap">{{ ucfirst(__('Log Out')) }}</span>
+                        <span class="flex-1 ml-3 whitespace-nowrap">{{ Str::ucfirst(__('Log Out')) }}</span>
                     </x-aside-link>
                 </form>
             </li>

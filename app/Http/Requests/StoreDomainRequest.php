@@ -26,15 +26,15 @@ class StoreDomainRequest extends FormRequest
     public function rules()
     {
         return [
-            'tenant_domain' => [
+            'tenant_subdomain' => [
                 'required',
                 'min:4',
                 new DomainRule(
-                    $this->request->get('tenant_domain'),
-                    $this->request->get('tenant_subdomain')
+                    $this->request->get('tenant_subdomain'),
+                    $this->request->get('tenant_domain')
                 )
             ],
-            'tenant_subdomain' => 'required|in:localhost',
+            'tenant_domain' => 'required|in:localhost',
         ];
     }
 
@@ -46,7 +46,8 @@ class StoreDomainRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'tenant_domain' => ucfirst(__('admin.tenants.domain_name'))
+            'tenant_domain' => ucfirst(__('admin.tenants.domain_name')),
+            'tenant_subdomain' => ucfirst(__('admin.tenants.domain_name')),
         ];
     }
 }

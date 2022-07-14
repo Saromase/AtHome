@@ -16,13 +16,20 @@ class DomainRule implements ValidationRule
     public $domain;
 
     /**
+     * Verification d'un domain existant.
+     * @var null|Tenant
+     */
+    public $tenant;
+
+    /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct(string $domain, string $subdomain)
+    public function __construct(string $domain, string $subdomain, ?Tenant $tenant = null)
     {
         $this->domain = $domain . '.' . $subdomain;
+        $this->tenant = $tenant;
     }
 
     /**
@@ -35,7 +42,12 @@ class DomainRule implements ValidationRule
     public function passes($attribute, $value)
     {
         $this->attribute = $attribute;
-        return (Domain::where('domain', $this->domain)->first() === null);
+
+        if ($this->tenant !== null) {
+            return (Domain::where('domain', $this->domain)->where('tenant_id', '!=', $this->tenant->id)->first() === null);
+        } else {
+            return (Domain::where('domain', $this->domain)->first() === null);
+        }
     }
 
     /**

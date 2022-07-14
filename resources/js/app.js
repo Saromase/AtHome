@@ -4,6 +4,10 @@ import Alpine from 'alpinejs';
 
 import 'flowbite';
 
+import copy from 'copy-to-clipboard';
+
+
+window.copy = copy;
 
 window.Alpine = Alpine;
 

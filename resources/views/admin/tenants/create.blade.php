@@ -3,14 +3,14 @@
         <form class="px-3 pt-3" method="POST" action="{{ route('tenants.store') }}">
             <div
                 class="bg-gray-50 dark:text-white dark:bg-slate-800 border-b border-gray-200 dark:border-white py-2 px-2">
-                {{ ucfirst(__('admin.tenants.add_tenant')) }}
+                {{ Str::ucfirst(__('admin.tenants.add_tenant')) }}
             </div>
 
             @csrf
 
             <!-- Nom du client -->
             <div class="pb-2 pt-2">
-                <x-label for="tenant_name" :value="ucfirst(__('admin.tenants.name_tenant'))" />
+                <x-label for="tenant_name" :value="Str::ucfirst(__('admin.tenants.name_tenant'))" />
 
                 <x-input id="tenant_name" class="block mt-1 w-full" type="text" name="tenant_name" :value="old('tenant_name')" required
                     autofocus />
@@ -18,7 +18,7 @@
 
             <!-- Identifiant du client -->
             <div class="pb-2">
-                <x-label for="tenant_id" :value="ucfirst(__('admin.tenants.id_tenant'))" />
+                <x-label for="tenant_id" :value="Str::ucfirst(__('admin.tenants.id_tenant'))" />
 
                 <x-input id="tenant_id" class="block mt-1 w-full" type="text" name="tenant_id" :value="old('tenant_id')" />
             </div>
@@ -26,17 +26,17 @@
             {{-- Domain --}}
             <div class="flex w-full">
                 <div class="pb-2 grow pr-1">
-                    <x-label for="tenant_domain" :value="ucfirst(__('admin.tenants.domain_name'))" />
+                    <x-label for="tenant_subdomain" :value="Str::ucfirst(__('admin.tenants.domain_name'))" />
 
-                    <x-input id="tenant_domain" class="block mt-1 w-full" type="text" name="tenant_domain" :value="old('tenant_domain')"
+                    <x-input id="tenant_subdomain" class="block mt-1 w-full" type="text" name="tenant_subdomain" :value="old('tenant_subdomain')"
                         required />
 
                 </div>
                 <div class="pb-2 grow pl-1">
-                    <x-label for="tenant_subdomain" :value="ucfirst(__('admin.tenants.domain_name'))" />
+                    <x-label for="tenant_domain" :value="Str::ucfirst(__('admin.tenants.domain_name'))" />
 
-                    <x-select id="tenant_subdomain" class="block mt-1 w-full" type="select" name="tenant_subdomain" required>
-                        <option value="localhost" {{ old('tenant_subdomain') === 'localhost' ? "selected" : "" }}>localhost
+                    <x-select id="tenant_domain" class="block mt-1 w-full" type="select" name="tenant_domain" required>
+                        <option value="localhost" {{ old('tenant_domain') === 'localhost' ? "selected" : "" }}>localhost
                         </option>
                     </x-select>
 
@@ -51,20 +51,20 @@
             {{-- Ajout Administrateur --}}
             <div
                 class="bg-gray-50 dark:text-white dark:bg-slate-800 border-b border-gray-200 dark:border-white py-2 px-2">
-                {{ ucfirst(__('admin.tenants.add_administrator')) }}
+                {{ Str::ucfirst(__('admin.tenants.add_administrator')) }}
             </div>
 
             {{-- Administrateur --}}
             <div class="flex w-full pt-2">
                 <div class="pb-2 grow pr-1">
-                    <x-label for="administrator_name" :value="ucfirst(__('Name'))" />
+                    <x-label for="administrator_name" :value="Str::ucfirst(__('Name'))" />
 
                     <x-input id="administrator_name" class="block mt-1 w-full" type="text" name="administrator_name" :value="old('administrator_name')"
                         required />
 
                 </div>
                 <div class="pb-2 grow pl-1">
-                    <x-label for="administrator_email" :value="ucfirst(__('Email'))" />
+                    <x-label for="administrator_email" :value="Str::ucfirst(__('Email'))" />
 
                     <x-input id="administrator_email" class="block mt-1 w-full" type="email" name="administrator_email" :value="old('administrator_name')"
                         required />
@@ -74,7 +74,7 @@
             </div>
 
             <div class="pb-2">
-                <x-label for="administrator_password" :value="ucfirst(__('Password'))" />
+                <x-label for="administrator_password" :value="Str::ucfirst(__('Password'))" />
                 @livewire('generate-random-password')
             </div>
 
