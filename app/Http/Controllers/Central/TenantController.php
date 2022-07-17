@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Central;
 
 use App\Models\Tenant;
 use App\Http\Controllers\Controller;
