@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
     {
         $adminSeeder = new AdminSeeder();
         $adminSeeder->run();
-        // \App\Models\User::factory(10)->create();
+        // \App\Models\Shared\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
+        // \App\Models\Shared\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);

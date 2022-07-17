@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Central;
 
-use App\Models\Tenant;
+use App\Models\Central\Tenant;
 use Livewire\Component;
 use Livewire\WithPagination;
 

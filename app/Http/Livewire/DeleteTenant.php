@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Tenant;
+use App\Models\Central\Tenant;
 use Livewire\Component;
 
 class DeleteTenant extends Component

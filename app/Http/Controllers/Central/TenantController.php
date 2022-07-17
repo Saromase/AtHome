@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Central;
 
-use App\Models\Tenant;
+use App\Models\Central\Tenant;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateTenantRequest;
 use App\Http\Requests\UpdateTenantRequest;
-use App\Models\User;
+use App\Models\Shared\User;
 use Illuminate\Support\Facades\Hash;
 
 class TenantController extends Controller

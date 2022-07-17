@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Rules;
+namespace App\Rules\Central;
 
-use App\Models\Tenant;
+use App\Models\Central\Tenant;
 use Illuminate\Contracts\Validation\Rule as ValidationRule;
 use Illuminate\Validation\Rule;
 use Stancl\Tenancy\Database\Models\Domain;

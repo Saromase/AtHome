@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\DomainRule;
+use App\Rules\Central\DomainRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
