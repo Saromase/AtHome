@@ -46,7 +46,7 @@ class UpdateTenantRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => ucfirst(__('admin.tenants.name_tenant')),
+            'name' => ucfirst(__('admin.tenants.tenant_name')),
             'domain' => ucfirst(__('admin.tenants.domain_name')),
             'subdomain' => ucfirst(__('admin.tenants.domain_name')),
             

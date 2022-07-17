@@ -10,7 +10,7 @@
 
             <!-- Nom du client -->
             <div class="pb-2 pt-2">
-                <x-label for="tenant_name" :value="Str::ucfirst(__('admin.tenants.name_tenant'))" />
+                <x-label for="tenant_name" :value="Str::ucfirst(__('admin.tenants.tenant_name'))" />
 
                 <x-input id="tenant_name" class="block mt-1 w-full" type="text" name="tenant_name" :value="old('tenant_name')" required
                     autofocus />

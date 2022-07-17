@@ -14,7 +14,7 @@
 
             <!-- Nom du client -->
             <div class="pb-2 pt-2">
-                <x-label for="name" :value="Str::ucfirst(__('admin.tenants.name_tenant'))" />
+                <x-label for="name" :value="Str::ucfirst(__('admin.tenants.tenant_name'))" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name"
                     :value="old('name') ?? $tenant->name" required autofocus />

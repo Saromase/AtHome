@@ -18,4 +18,9 @@ class Tenant extends BaseTenant implements TenantWithDatabase
             'name',
         ];
     }
+
+    public static function scopeSearch($query, $search)
+    {
+        return $query->where('name', 'like', '%'.$search.'%');
+    }
 }

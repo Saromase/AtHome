@@ -16,11 +16,7 @@ class TenantController extends Controller
      */
     public function index()
     {
-        $tenants = Tenant::get();
-
-        return view('admin.tenants.index', [
-            'tenants' => $tenants
-        ]);
+        return view('admin.tenants.index');
     }
 
 

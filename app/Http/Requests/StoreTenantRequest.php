@@ -36,7 +36,7 @@ class StoreTenantRequest extends FormRequest
     {
         return [
             'tenant_id' => ucfirst(__('admin.tenants.id_tenant')),
-            'tenant_name' => ucfirst(__('admin.tenants.name_tenant')),
+            'tenant_name' => ucfirst(__('admin.tenants.tenant_name')),
         ];
     }
 }

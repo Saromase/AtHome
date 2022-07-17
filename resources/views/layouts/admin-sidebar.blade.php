@@ -1,20 +1,25 @@
-<aside class="w-80 h-full" aria-label="Sidebar">
+<aside class="w-18 md:w-80 h-full" aria-label="Sidebar">
     <div class="overflow-y-auto h-full py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
         <ul class="space-y-2">
             {{-- Dashboard --}}
-            <li>
+            <li data-tooltip-target="tooltip-sidebar-dashboard" data-tooltip-placement="right">
                 <x-aside-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     <svg class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                         <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                     </svg>
-                    <span class="ml-3">{{ __('Dashboard') }}</span>
+                    <div id="tooltip-sidebar-dashboard" role="tooltip"
+                        class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        {{ Str::ucfirst(__('Dashboard')) }}
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <span class="hidden sm:flex ml-3">{{ __('Dashboard') }}</span>
                 </x-aside-link>
             </li>
 
             {{-- Gestion des clients --}}
-            <li>
+            <li data-tooltip-target="tooltip-sidebar-tenant-management" data-tooltip-placement="right">
                 <x-aside-link href="{{ route('tenants.index') }}" :active="request()->routeIs('tenants.*')">
                     <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +27,12 @@
                             d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
                         </path>
                     </svg>
-                    <span class="flex-1 ml-3 whitespace-nowrap">{{ Str::ucfirst(__('admin.tenants.tenant_management')) }}</span>
+                    <div id="tooltip-sidebar-tenant-management" role="tooltip"
+                        class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        {{ Str::ucfirst(__('admin.tenants.tenant_management')) }}
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <span class="hidden sm:flex flex-1 ml-3 whitespace-nowrap">{{ Str::ucfirst(__('admin.tenants.tenant_management')) }}</span>
                     {{-- <span
                         class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> --}}
                 </x-aside-link>
@@ -114,7 +124,7 @@
                     <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
                 </a>
             </li> --}}
-            <li>
+            <li data-tooltip-target="tooltip-sidebar-logout" data-tooltip-placement="right">
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -127,7 +137,12 @@
                                 d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="flex-1 ml-3 whitespace-nowrap">{{ Str::ucfirst(__('Log Out')) }}</span>
+                        <div id="tooltip-sidebar-logout" role="tooltip"
+                            class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            {{ Str::ucfirst(__('Log Out')) }}
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        <span class="hidden sm:flex flex-1 ml-3 whitespace-nowrap">{{ Str::ucfirst(__('Log Out')) }}</span>
                     </x-aside-link>
                 </form>
             </li>
