@@ -25,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(base_path() . '/database/migrations/shared');
+        $this->loadMigrationsFrom([
+            base_path() . '/database/migrations/shared',
+            base_path() . '/database/migrations/central',
+        ]);
     }
 }
