@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Blade::component('table-line', TableLine::class);
+        $this->loadMigrationsFrom(base_path() . '/database/migrations/shared');
     }
 }
